@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET users listing. */
 router.get('/', function(req, res, next) {
   product=[
     {
@@ -16,9 +16,19 @@ router.get('/', function(req, res, next) {
       description:"King of Smart Phone",
       image:"https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXBob25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
     }
-
   ]
-  res.render('index', { title: 'Shopping cart',product,admin:false });
+
+  res.render('admin/view-products',{admin:true,product})
 });
+router.get('/add-product',(req,res)=>{//Get Show cheyyan: Just kanan pattum
+  res.render('admin/add-product')
+})
+router.post('/add-product',(req,res)=>{//Post method : form data kittan vendi
+  console.log(req.body)
+  console.log(req.files.image)
+
+})
+
+
 
 module.exports = router;

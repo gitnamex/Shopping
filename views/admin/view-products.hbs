@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col"></div> <!-- Empty column to push the button to the right -->
+        <div class="col-auto">
+            <a href="/admin/add-product" class="btn btn-success">Add Product</a>
+        </div>
+    </div>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Category</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each product}}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{this.name}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.description}}</td>
+                <td><img style="height: 50px; width: 50px;" src="{{this.image}}" alt="Image not found"></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

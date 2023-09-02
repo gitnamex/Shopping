@@ -10,7 +10,6 @@ var adminRouter = require('./routes/admin');
 var app = express();
 //Import FileUplaod code
 var fileUpload = require('express-fileupload')
-
 //Use file Upload
 app.use(fileUpload())
 var hbs = require('express-handlebars');//Imported
@@ -21,7 +20,10 @@ app.engine('hbs', hbs.engine({
   layoutsDir: __dirname + '/views/layout/',
   partialsDir: __dirname + '/views/partials'
 }))
+//Imported Connection Code mongodb
+const connectToDatabase = require ('./config/connection')
 
+connectToDatabase()//Database connection Called
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

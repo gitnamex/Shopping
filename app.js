@@ -23,7 +23,7 @@ app.engine('hbs', hbs.engine({
 //Imported Connection Code mongodb
 const connectToDatabase = require ('./config/connection')
 
-connectToDatabase()//Database connection Called
+connectToDatabase()//Database connection Call
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

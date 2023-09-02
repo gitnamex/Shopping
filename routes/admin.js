@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   product=[
@@ -26,9 +25,6 @@ router.get('/add-product',(req,res)=>{//Get Show cheyyan: Just kanan pattum
 router.post('/add-product',(req,res)=>{//Post method : form data kittan vendi
   console.log(req.body)
   console.log(req.files.image)
-
 })
-
-
 
 module.exports = router;
